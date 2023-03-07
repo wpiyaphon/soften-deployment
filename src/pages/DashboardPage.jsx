@@ -124,15 +124,15 @@ export default function DashboardPage() {
 
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6} md={4}>
-                        <AppWidgetSummary title="Total Customers" total={productCount} icon={'ant-design:android-filled'} />
+                        <AppWidgetSummary title="Total Customers" total={customerCount} icon={'ic:round-supervised-user-circle'} />
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={4}>
-                        <AppWidgetSummary title="Total Products" total={customerCount} color="info" icon={'ant-design:apple-filled'} />
+                        <AppWidgetSummary title="Total Products" total={productCount} color="info" icon={'mdi:candle'} />
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={4}>
-                        <AppWidgetSummary title="Total Orders" total={orderCount} color="warning" icon={'ant-design:windows-filled'} />
+                        <AppWidgetSummary title="Total Orders" total={orderCount} color="warning" icon={'material-symbols:order-approve'} />
                     </Grid>
 
                     <Grid item xs={12} md={12} lg={12}>

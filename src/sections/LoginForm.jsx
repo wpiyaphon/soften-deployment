@@ -47,10 +47,22 @@ export default function LoginForm() {
             await login(data.email, data.password);
         } catch (error) {
             reset(defaultValues);
-            setError('afterSubmit', {
-                ...error,
-                message: error.message
-            });
+            if (error.message === 'Firebase: Error (auth/user-not-found).') {
+                setError('afterSubmit', {
+                    ...error,
+                    message: 'User not found, Please try again'
+                });
+            } else if (error.message === 'Firebase: Error (auth/wrong-password).') {
+                setError('afterSubmit', {
+                    ...error,
+                    message: 'Wrong Password, Please try again'
+                });
+            } else {
+                setError('afterSubmit', {
+                    ...error,
+                    message: error.message
+                });
+            }
         }
     }
 
